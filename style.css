@@ -1,0 +1,51 @@
+body,h1 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+#photo-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ccc;
+}
+
+#addPhotoBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+button:hover {
+  background-color: #ff5555;
+}
