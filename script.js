@@ -1,3 +1,28 @@
+// Add a variable to keep track of the zoom level
+let zoomLevel = 100;  // in percentage
+
+// Function to handle zooming in
+function zoomIn() {
+    zoomLevel += 10;
+    updateZoom();
+}
+
+// Function to handle zooming out
+function zoomOut() {
+    zoomLevel -= 10;
+    if (zoomLevel < 0) zoomLevel = 0;
+    updateZoom();
+}
+
+// Function to update the zoom level for all images
+function updateZoom() {
+    const allImages = document.querySelectorAll('#photo-gallery img');
+    allImages.forEach(img => {
+        img.style.width = `${zoomLevel}%`;
+        img.style.height = 'auto';
+    });
+}
+
 function createImgElement(photoURL) {
     const imgElem = document.createElement('img');
     imgElem.src = photoURL;
@@ -30,4 +55,9 @@ function addPhoto() {
 }
 
 const addPhotoButton = document.getElementById('addPhotoBtn');
+const zoomInButton = document.getElementById('zoomInBtn');
+const zoomOutButton = document.getElementById('zoomOutBtn');
+
 addPhotoButton.addEventListener('click', addPhoto);
+zoomInButton.addEventListener('click', zoomIn);
+zoomOutButton.addEventListener('click', zoomOut);
